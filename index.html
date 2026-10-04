@@ -1,0 +1,219 @@
+<!doctype html>
+<html lang="en" class="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#09090b" />
+  <meta name="description" content="Muhammad Rafa Qanthara — Software Engineer building thoughtful digital experiences through code, design, and data." />
+  <title>Muhammad Rafa Qanthara — Software Engineer & Creative Technologist</title>
+  <script>
+    (() => {
+      const saved = localStorage.getItem('rafa-theme');
+      const preferred = window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark';
+      document.documentElement.classList.toggle('dark', (saved || preferred) === 'dark');
+    })();
+  </script>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = { darkMode: 'class', theme: { extend: { fontFamily: { sans: ['Inter', 'ui-sans-serif', 'system-ui'] }, colors: { ink: '#09090b' } } } };
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <style>
+    :root { color-scheme: dark; --bg:#09090b; --surface:rgba(24,24,27,.68); --line:rgba(255,255,255,.1); --muted:#a1a1aa; --text:#fafafa; --glow:rgba(124,58,237,.22); }
+    html:not(.dark) { color-scheme:light; --bg:#f7f7f8; --surface:rgba(255,255,255,.78); --line:rgba(24,24,27,.1); --muted:#52525b; --text:#18181b; --glow:rgba(99,102,241,.15); }
+    * { box-sizing:border-box; }
+    html { scroll-behavior:smooth; scroll-padding-top:90px; }
+    body { margin:0; background:var(--bg); color:var(--text); font-family:'Manrope',sans-serif; transition:background .45s ease,color .45s ease; overflow-x:hidden; }
+    ::selection { background:#8b5cf6; color:white; }
+    .mono { font-family:'DM Mono',monospace; }
+    .grid-bg { background-image:linear-gradient(rgba(161,161,170,.055) 1px,transparent 1px),linear-gradient(90deg,rgba(161,161,170,.055) 1px,transparent 1px); background-size:64px 64px; mask-image:linear-gradient(to bottom,black,transparent 85%); }
+    .orb { position:absolute; border-radius:9999px; filter:blur(1px); will-change:transform; pointer-events:none; }
+    .glass { background:var(--surface); border:1px solid var(--line); backdrop-filter:blur(18px); }
+    .gradient-text { background:linear-gradient(110deg,#c4b5fd 2%,#818cf8 48%,#67e8f9 100%); -webkit-background-clip:text; background-clip:text; color:transparent; }
+    html:not(.dark) .gradient-text { background-image:linear-gradient(110deg,#7c3aed,#4f46e5 52%,#0891b2); }
+    html:not(.dark) header { background:rgba(255,255,255,.8)!important; border-color:rgba(24,24,27,.08)!important; }
+    html:not(.dark) [class~="text-zinc-200"],html:not(.dark) [class~="text-zinc-300"] { color:#3f3f46!important; }
+    html:not(.dark) [class~="text-zinc-400"] { color:#52525b!important; }
+    html:not(.dark) [class~="text-zinc-500"] { color:#71717a!important; }
+    html:not(.dark) [class~="text-zinc-600"] { color:#71717a!important; }
+    html:not(.dark) [class~="border-zinc-700"],html:not(.dark) [class~="border-zinc-800/50"] { border-color:rgba(24,24,27,.13)!important; }
+    html:not(.dark) [class~="bg-zinc-900/20"] { background-color:rgba(228,228,231,.35)!important; }
+    html:not(.dark) .glass { box-shadow:0 12px 42px -30px rgba(24,24,27,.25); }
+    html:not(.dark) .grid-bg { opacity:.7; }
+    .reveal { opacity:0; transform:translateY(24px); transition:opacity .7s ease,transform .7s cubic-bezier(.2,.7,.2,1); }
+    .reveal.visible { opacity:1; transform:translateY(0); }
+    .project-card { transition:transform .35s ease,border-color .35s ease,box-shadow .35s ease; }
+    .project-card:hover { transform:translateY(-7px); border-color:rgba(139,92,246,.55); box-shadow:0 20px 70px -35px var(--glow); }
+    .project-card:hover .project-arrow { transform:translate(3px,-3px); color:#a78bfa; }
+    .project-arrow { transition:transform .25s ease,color .25s ease; }
+    .skill-card { transition:transform .3s ease,border-color .3s ease,background .3s ease; }
+    .skill-card:hover { transform:translateY(-4px); border-color:rgba(139,92,246,.4); }
+    .nav-link { color:var(--muted); transition:color .2s; } .nav-link:hover { color:var(--text); }
+    .noise { position:fixed; inset:0; z-index:50; pointer-events:none; opacity:.025; background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.6'/%3E%3C/svg%3E"); }
+    .theme-icon { transition:transform .35s ease; } #theme-toggle:hover .theme-icon { transform:rotate(18deg); }
+    @media (prefers-reduced-motion:reduce) { *,*::before,*::after { scroll-behavior:auto!important; animation-duration:.01ms!important; transition-duration:.01ms!important; } .reveal { opacity:1; transform:none; } }
+  </style>
+</head>
+<body>
+  <div class="noise" aria-hidden="true"></div>
+  <header class="fixed top-0 z-40 w-full border-b border-zinc-800/40 bg-zinc-950/65 backdrop-blur-xl dark:border-white/5 dark:bg-zinc-950/65" id="topbar">
+    <nav class="mx-auto flex h-[72px] max-w-7xl items-center justify-between px-5 sm:px-8" aria-label="Main navigation">
+      <a href="#home" class="flex items-center gap-3" aria-label="Rafa home">
+        <span class="grid h-9 w-9 place-items-center rounded-xl border border-violet-400/25 bg-violet-500/10 text-sm font-extrabold text-violet-300">rq<span class="text-cyan-300">.</span></span>
+        <span class="text-sm font-bold tracking-tight">Muhammad Rafa Q</span>
+      </a>
+      <div class="hidden items-center gap-8 text-xs font-semibold sm:flex">
+        <a class="nav-link" href="#about">About</a><a class="nav-link" href="#work">Work</a><a class="nav-link" href="#contact">Contact</a>
+      </div>
+      <div class="flex items-center gap-3">
+        <a href="mailto:mhmdrafa28@gmail.com" class="hidden rounded-full border border-zinc-700 px-4 py-2 text-xs font-semibold text-zinc-200 transition hover:border-violet-400/60 hover:text-white dark:border-zinc-700 sm:inline-flex">Let’s talk <span class="ml-2 text-violet-300">↗</span></a>
+        <button id="theme-toggle" class="grid h-9 w-9 place-items-center rounded-full border border-zinc-700/80 text-zinc-300 transition hover:border-violet-400/60 hover:text-white" aria-label="Switch color theme" title="Switch color theme">
+          <svg class="theme-icon h-4 w-4" id="theme-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M4.93 4.93l1.42 1.42m11.3 11.3 1.42 1.42M2 12h2m16 0h2M4.93 19.07l1.42-1.42m11.3-11.3 1.42-1.42"/></svg>
+          <svg class="theme-icon hidden h-4 w-4" id="theme-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M20.2 15.2A8.7 8.7 0 0 1 8.8 3.8 8.8 8.8 0 1 0 20.2 15.2Z"/></svg>
+        </button>
+      </div>
+    </nav>
+  </header>
+  <main>
+    <section id="home" class="relative isolate flex min-h-[760px] items-center overflow-hidden pt-20 lg:min-h-[850px]">
+      <div class="grid-bg absolute inset-0 -z-10" aria-hidden="true"></div>
+      <div class="orb parallax absolute -right-24 top-20 -z-10 h-[390px] w-[390px] bg-violet-600/20" data-speed=".16"></div>
+      <div class="orb parallax absolute right-[23%] top-[38%] -z-10 h-[280px] w-[280px] bg-cyan-500/10" data-speed="-.09"></div>
+      <div class="orb parallax absolute -left-28 bottom-0 -z-10 h-[280px] w-[280px] bg-indigo-700/15" data-speed=".08"></div>
+      <div class="mx-auto grid w-full max-w-7xl items-center gap-12 px-5 py-20 sm:px-8 lg:grid-cols-[1.2fr_.8fr] lg:gap-8 lg:py-28">
+        <div class="relative z-10">
+          <div class="mb-8 inline-flex items-center gap-2 rounded-full border border-emerald-400/20 bg-emerald-400/[.06] px-3.5 py-2 text-[11px] font-semibold tracking-wide text-emerald-300">
+            <span class="relative flex h-2 w-2"><span class="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-50"></span><span class="relative inline-flex h-2 w-2 rounded-full bg-emerald-400"></span></span>
+            OPEN TO OPPORTUNITIES
+          </div>
+          <p class="mono mb-4 text-xs tracking-[.18em] text-violet-300">HELLO, I’M MUHAMMAD RAFA QANTHARA</p>
+          <h1 class="max-w-4xl text-5xl font-extrabold leading-[1.04] tracking-[-.055em] sm:text-6xl md:text-7xl xl:text-[88px]">I build digital<br class="hidden sm:block"/> things with <span class="gradient-text">purpose.</span></h1>
+          <p class="mt-7 max-w-xl text-base leading-7 text-zinc-400 sm:text-lg sm:leading-8">Software engineer blending thoughtful design, modern web development, and data to turn complex ideas into clear, useful experiences.</p>
+          <div class="mt-8 flex flex-wrap gap-2.5" aria-label="Areas of expertise">
+            <span class="rounded-full border border-violet-400/20 bg-violet-400/[.07] px-3 py-1.5 text-[11px] font-semibold text-violet-200">Software Engineer</span><span class="rounded-full border border-indigo-400/20 bg-indigo-400/[.07] px-3 py-1.5 text-[11px] font-semibold text-indigo-200">Web Development</span><span class="rounded-full border border-cyan-400/20 bg-cyan-400/[.07] px-3 py-1.5 text-[11px] font-semibold text-cyan-200">UI/UX Design</span><span class="rounded-full border border-fuchsia-400/20 bg-fuchsia-400/[.07] px-3 py-1.5 text-[11px] font-semibold text-fuchsia-200">Data Analysis</span>
+          </div>
+          <div class="mt-10 flex flex-wrap gap-3">
+            <a href="#contact" class="group inline-flex items-center gap-3 rounded-full bg-white px-5 py-3 text-sm font-bold text-zinc-950 transition hover:bg-violet-100">Start a conversation <span class="transition group-hover:translate-x-1">↗</span></a>
+            <a href="https://github.com/rapuy28" target="_blank" rel="noreferrer" class="inline-flex items-center gap-2 rounded-full border border-zinc-700 px-5 py-3 text-sm font-semibold text-zinc-200 transition hover:border-zinc-500 hover:bg-white/5">View GitHub <svg class="h-4 w-4" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .9a11.1 11.1 0 0 0-3.51 21.63c.56.1.76-.24.76-.54v-2.1c-3.1.67-3.76-1.31-3.76-1.31-.5-1.28-1.24-1.62-1.24-1.62-1.01-.69.08-.68.08-.68 1.11.08 1.7 1.14 1.7 1.14 1 1.7 2.62 1.21 3.26.93.1-.72.39-1.21.71-1.49-2.48-.28-5.09-1.24-5.09-5.52 0-1.22.44-2.22 1.15-3-.12-.28-.5-1.42.11-2.96 0 0 .94-.3 3.05 1.15a10.6 10.6 0 0 1 5.55 0c2.12-1.44 3.05-1.15 3.05-1.15.61 1.54.23 2.68.11 2.96.72.78 1.15 1.78 1.15 3 0 4.3-2.61 5.24-5.1 5.51.4.35.76 1.02.76 2.06v3.05c0 .3.2.65.77.54A11.1 11.1 0 0 0 12 .9Z"/></svg></a>
+          </div>
+          <div class="mt-14 flex items-center gap-3 text-xs text-zinc-500"><span class="h-px w-8 bg-zinc-700"></span>Scroll to explore <span class="animate-bounce text-violet-300">↓</span></div>
+        </div>
+        <div class="relative mx-auto w-full max-w-[400px] lg:ml-auto">
+          <div class="parallax absolute -inset-6 rounded-[2.5rem] border border-violet-400/10" data-speed="-.07"></div>
+          <div class="glass relative overflow-hidden rounded-[2rem] p-6 shadow-2xl shadow-violet-950/20 sm:p-8">
+            <div class="absolute -right-16 -top-20 h-52 w-52 rounded-full bg-violet-500/20 blur-3xl"></div>
+            <div class="relative flex items-center justify-between"><span class="mono text-[10px] tracking-[.16em] text-zinc-500">QUICK INTRO</span><span class="flex gap-1.5"><i class="h-2 w-2 rounded-full bg-rose-400/80"></i><i class="h-2 w-2 rounded-full bg-amber-300/80"></i><i class="h-2 w-2 rounded-full bg-emerald-400/80"></i></span></div>
+            <div class="relative mt-10 h-40 w-40 overflow-hidden rounded-[2rem] border border-white/10 bg-zinc-900">
+              <img src="profile.png" alt="Muhammad Rafa Qanthara" class="h-full w-full object-cover object-[center_55%]" />
+              <div class="absolute inset-0 rounded-[2rem] ring-1 ring-inset ring-white/10"></div>
+              <span class="absolute bottom-3 right-4 h-2 w-2 rounded-full bg-cyan-300 shadow-[0_0_18px_4px_rgba(103,232,249,.5)]"></span>
+            </div><span class="gradient-text text-6xl font-extrabold tracking-[-.08em]">rq.</span><span class="absolute bottom-3 right-4 h-2 w-2 rounded-full bg-cyan-300 shadow-[0_0_18px_4px_rgba(103,232,249,.5)]"></span>
+            </div>
+            <h2 class="relative mt-7 text-2xl font-extrabold tracking-tight">Muhammad Rafa<br/>Qanthara</h2>
+            <p class="relative mt-2 text-sm text-zinc-400">Engineer by craft. Curious by nature.</p>
+            <div class="relative my-6 h-px bg-white/10"></div>
+            <div class="relative flex items-center justify-between"><div><p class="mono text-[10px] tracking-widest text-zinc-500">BASED IN</p><p class="mt-1 text-sm font-semibold">Indonesia <span class="ml-1">🇮🇩</span></p></div><div class="text-right"><p class="mono text-[10px] tracking-widest text-zinc-500">FOCUS</p><p class="mt-1 text-sm font-semibold">Digital products</p></div></div>
+            <div class="relative mt-7 flex flex-wrap gap-2"><span class="rounded-lg bg-white/[.05] px-2.5 py-1.5 text-[10px] text-zinc-300">Problem solving</span><span class="rounded-lg bg-white/[.05] px-2.5 py-1.5 text-[10px] text-zinc-300">Product thinking</span><span class="rounded-lg bg-white/[.05] px-2.5 py-1.5 text-[10px] text-zinc-300">Detail oriented</span></div>
+          </div>
+          <div class="glass absolute -bottom-7 -left-6 flex items-center gap-3 rounded-2xl px-4 py-3 shadow-xl sm:-left-12"><span class="grid h-9 w-9 place-items-center rounded-xl bg-cyan-400/10 text-lg text-cyan-300">✳</span><span><span class="block text-xs font-bold">Built with intention</span><span class="mt-0.5 block text-[10px] text-zinc-500">Code · Design · Insight</span></span></div>
+        </div>
+      </div>
+      <div class="absolute bottom-0 left-1/2 h-px w-[min(90%,1100px)] -translate-x-1/2 bg-gradient-to-r from-transparent via-zinc-700/70 to-transparent"></div>
+    </section>
+    <section id="about" class="relative py-28 sm:py-32">
+      <div class="mx-auto max-w-7xl px-5 sm:px-8">
+        <div class="reveal mb-14 grid gap-6 md:grid-cols-[.75fr_1.25fr] md:items-end">
+          <div><p class="mono mb-4 text-[11px] tracking-[.2em] text-violet-300">01 / ABOUT & EXPERTISE</p><h2 class="text-4xl font-extrabold tracking-[-.045em] sm:text-5xl">One mindset.<br/><span class="text-zinc-500">Many disciplines.</span></h2></div>
+          <p class="max-w-2xl text-sm leading-7 text-zinc-400 sm:text-base sm:leading-8">I bring engineering rigor, design empathy, and analytical thinking into every project. From the first sketch to the final interaction, I care about how a product works—and how it feels to use.</p>
+        </div>
+        <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+          <article class="skill-card reveal glass rounded-2xl p-6" style="transition-delay:50ms"><div class="mb-8 flex items-center justify-between"><span class="grid h-11 w-11 place-items-center rounded-xl bg-violet-400/10 text-xl text-violet-300">⌘</span><span class="mono text-[10px] text-zinc-600">01</span></div><h3 class="text-base font-bold">Software Engineering</h3><p class="mt-2 text-xs leading-6 text-zinc-400">Reliable systems and clean, maintainable solutions built to scale with real needs.</p><div class="mt-5 flex flex-wrap gap-1.5"><span class="mono rounded-md bg-white/[.05] px-2 py-1 text-[9px] text-zinc-400">Architecture</span><span class="mono rounded-md bg-white/[.05] px-2 py-1 text-[9px] text-zinc-400">Problem solving</span></div></article>
+          <article class="skill-card reveal glass rounded-2xl p-6" style="transition-delay:100ms"><div class="mb-8 flex items-center justify-between"><span class="grid h-11 w-11 place-items-center rounded-xl bg-indigo-400/10 text-xl text-indigo-300">⌁</span><span class="mono text-[10px] text-zinc-600">02</span></div><h3 class="text-base font-bold">Web Development</h3><p class="mt-2 text-xs leading-6 text-zinc-400">Fast, responsive web experiences with thoughtful details and strong foundations.</p><div class="mt-5 flex flex-wrap gap-1.5"><span class="mono rounded-md bg-white/[.05] px-2 py-1 text-[9px] text-zinc-400">Frontend</span><span class="mono rounded-md bg-white/[.05] px-2 py-1 text-[9px] text-zinc-400">Responsive UI</span></div></article>
+          <article class="skill-card reveal glass rounded-2xl p-6" style="transition-delay:150ms"><div class="mb-8 flex items-center justify-between"><span class="grid h-11 w-11 place-items-center rounded-xl bg-cyan-400/10 text-xl text-cyan-300">◈</span><span class="mono text-[10px] text-zinc-600">03</span></div><h3 class="text-base font-bold">UI/UX Design</h3><p class="mt-2 text-xs leading-6 text-zinc-400">Intuitive interfaces shaped by human needs, clear systems, and a little delight.</p><div class="mt-5 flex flex-wrap gap-1.5"><span class="mono rounded-md bg-white/[.05] px-2 py-1 text-[9px] text-zinc-400">Prototyping</span><span class="mono rounded-md bg-white/[.05] px-2 py-1 text-[9px] text-zinc-400">Design systems</span></div></article>
+          <article class="skill-card reveal glass rounded-2xl p-6" style="transition-delay:200ms"><div class="mb-8 flex items-center justify-between"><span class="grid h-11 w-11 place-items-center rounded-xl bg-fuchsia-400/10 text-xl text-fuchsia-300">◌</span><span class="mono text-[10px] text-zinc-600">04</span></div><h3 class="text-base font-bold">Data Analysis</h3><p class="mt-2 text-xs leading-6 text-zinc-400">Finding useful patterns in data and translating them into confident decisions.</p><div class="mt-5 flex flex-wrap gap-1.5"><span class="mono rounded-md bg-white/[.05] px-2 py-1 text-[9px] text-zinc-400">Insights</span><span class="mono rounded-md bg-white/[.05] px-2 py-1 text-[9px] text-zinc-400">Visualization</span></div></article>
+        </div>
+      </div>
+    </section>
+    <section id="work" class="relative border-y border-zinc-800/50 bg-zinc-900/20 py-28 sm:py-32 dark:border-white/5 dark:bg-white/[.015]">
+      <div class="mx-auto max-w-7xl px-5 sm:px-8">
+        <div class="reveal mb-14 flex flex-col justify-between gap-5 sm:flex-row sm:items-end"><div><p class="mono mb-4 text-[11px] tracking-[.2em] text-violet-300">02 / SELECTED WORK</p><h2 class="text-4xl font-extrabold tracking-[-.045em] sm:text-5xl">Ideas, made <span class="gradient-text">real.</span></h2></div><a class="group inline-flex items-center gap-2 text-sm font-semibold text-zinc-400 transition hover:text-white" href="https://github.com/rapuy28" target="_blank" rel="noreferrer">Explore all on GitHub <span class="project-arrow">↗</span></a></div>
+        <div class="grid gap-5 md:grid-cols-2">
+          <article class="project-card reveal glass group overflow-hidden rounded-3xl">
+            <div class="relative flex h-56 items-center justify-center overflow-hidden bg-gradient-to-br from-violet-950/70 via-indigo-950/50 to-zinc-950"><div class="absolute inset-0 opacity-35" style="background-image:radial-gradient(#a78bfa 1px,transparent 1px);background-size:20px 20px"></div><div class="absolute h-44 w-44 rounded-full border border-violet-300/15"></div><div class="absolute h-32 w-32 rounded-full border border-cyan-300/20"></div><div class="relative w-[75%] rounded-xl border border-white/15 bg-zinc-950/75 p-4 shadow-2xl backdrop-blur"><div class="mb-4 flex gap-1.5"><i class="h-1.5 w-1.5 rounded-full bg-rose-400"></i><i class="h-1.5 w-1.5 rounded-full bg-amber-300"></i><i class="h-1.5 w-1.5 rounded-full bg-emerald-400"></i><span class="ml-3 h-1.5 w-24 rounded bg-white/10"></span></div><div class="grid grid-cols-[1fr_1.4fr] gap-3"><div class="space-y-2"><div class="h-10 rounded-lg bg-violet-400/20"></div><div class="h-3 w-4/5 rounded bg-white/10"></div><div class="h-3 w-3/5 rounded bg-white/10"></div></div><div class="flex items-end gap-2 rounded-lg bg-white/[.04] p-3"><div class="h-8 flex-1 rounded-t bg-violet-500/50"></div><div class="h-14 flex-1 rounded-t bg-indigo-400/70"></div><div class="h-11 flex-1 rounded-t bg-cyan-400/50"></div><div class="h-20 flex-1 rounded-t bg-violet-300/75"></div></div></div></div><span class="absolute right-6 top-6 rounded-full border border-white/10 bg-black/25 px-3 py-1.5 mono text-[9px] text-violet-200">DATA / INSIGHTS</span></div>
+            <div class="p-6 sm:p-8"><div class="flex items-start justify-between gap-5"><div><p class="mono mb-2 text-[10px] tracking-widest text-violet-300">ANALYTICS · PRODUCT</p><h3 class="text-xl font-bold">Insight Dashboard</h3></div><a class="project-arrow grid h-10 w-10 shrink-0 place-items-center rounded-full border border-zinc-700 text-lg text-zinc-400" href="https://github.com/rapuy28" target="_blank" rel="noreferrer" aria-label="View Insight Dashboard on GitHub">↗</a></div><p class="mt-3 max-w-lg text-sm leading-6 text-zinc-400">A clear, focused analytics experience that turns complex metrics into actionable visual stories.</p><div class="mt-5 flex gap-2"><span class="rounded-md bg-white/[.05] px-2.5 py-1.5 mono text-[9px] text-zinc-400">Data visualization</span><span class="rounded-md bg-white/[.05] px-2.5 py-1.5 mono text-[9px] text-zinc-400">Dashboard UI</span></div></div>
+          </article>
+          <article class="project-card reveal glass group overflow-hidden rounded-3xl" style="transition-delay:100ms">
+            <div class="relative flex h-56 items-center justify-center overflow-hidden bg-gradient-to-br from-cyan-950/70 via-slate-900 to-zinc-950"><div class="absolute -left-10 top-0 h-64 w-64 rounded-full bg-cyan-500/10 blur-3xl"></div><div class="absolute -right-8 bottom-0 h-56 w-56 rounded-full bg-indigo-500/15 blur-3xl"></div><div class="relative flex w-[74%] items-center gap-4 rounded-2xl border border-white/15 bg-zinc-950/65 p-5 shadow-2xl backdrop-blur"><div class="grid h-14 w-14 shrink-0 place-items-center rounded-2xl bg-gradient-to-br from-cyan-300 to-blue-500 text-2xl font-black text-zinc-950">N</div><div class="flex-1"><div class="h-3 w-24 rounded-full bg-white/70"></div><div class="mt-2 h-2 w-36 max-w-full rounded-full bg-white/15"></div><div class="mt-4 flex gap-2"><i class="h-6 w-16 rounded-full bg-cyan-400/20"></i><i class="h-6 w-12 rounded-full bg-white/[.06]"></i></div></div><span class="text-cyan-300">↗</span></div><div class="absolute bottom-8 left-[18%] h-px w-16 bg-cyan-300/30"></div><span class="absolute right-6 top-6 rounded-full border border-white/10 bg-black/25 px-3 py-1.5 mono text-[9px] text-cyan-200">WEB / EXPERIENCE</span></div>
+            <div class="p-6 sm:p-8"><div class="flex items-start justify-between gap-5"><div><p class="mono mb-2 text-[10px] tracking-widest text-cyan-300">WEB DEVELOPMENT · UI/UX</p><h3 class="text-xl font-bold">Digital Product Studio</h3></div><a class="project-arrow grid h-10 w-10 shrink-0 place-items-center rounded-full border border-zinc-700 text-lg text-zinc-400" href="https://github.com/rapuy28" target="_blank" rel="noreferrer" aria-label="View Digital Product Studio on GitHub">↗</a></div><p class="mt-3 max-w-lg text-sm leading-6 text-zinc-400">A responsive product concept pairing a polished interface with a fast, accessible frontend.</p><div class="mt-5 flex gap-2"><span class="rounded-md bg-white/[.05] px-2.5 py-1.5 mono text-[9px] text-zinc-400">Responsive design</span><span class="rounded-md bg-white/[.05] px-2.5 py-1.5 mono text-[9px] text-zinc-400">Frontend</span></div></div>
+          </article>
+        </div>
+        <p class="reveal mt-5 text-xs text-zinc-600">Project concepts shown as portfolio samples. Visit GitHub for current repositories.</p>
+      </div>
+    </section>
+    <section id="contact" class="relative overflow-hidden py-28 sm:py-32">
+      <div class="orb parallax absolute -right-24 top-8 h-72 w-72 bg-violet-600/15" data-speed="-.1"></div><div class="orb parallax absolute -left-20 bottom-0 h-60 w-60 bg-cyan-500/10" data-speed=".08"></div>
+      <div class="reveal relative mx-auto max-w-5xl px-5 text-center sm:px-8">
+        <p class="mono mb-5 text-[11px] tracking-[.2em] text-violet-300">03 / LET’S CONNECT</p><h2 class="text-4xl font-extrabold leading-tight tracking-[-.05em] sm:text-6xl">Have a good idea?<br/><span class="gradient-text">Let’s make it happen.</span></h2><p class="mx-auto mt-6 max-w-xl text-sm leading-7 text-zinc-400 sm:text-base">Open to exciting projects, thoughtful collaborations, and conversations about building better digital experiences.</p>
+        <div class="mt-9 flex flex-wrap justify-center gap-3"><a href="https://wa.me/6282299738853" target="_blank" rel="noreferrer" class="inline-flex items-center gap-2 rounded-full bg-emerald-400 px-5 py-3 text-sm font-bold text-emerald-950 transition hover:bg-emerald-300"><svg class="h-4 w-4" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.52 3.48A11.85 11.85 0 0 0 12.09 0C5.5 0 .14 5.35.13 11.93c0 2.1.55 4.15 1.6 5.96L.04 24l6.27-1.64a11.9 11.9 0 0 0 5.77 1.47h.01c6.58 0 11.94-5.35 11.95-11.93a11.86 11.86 0 0 0-3.52-8.42ZM12.09 21.8h-.01a9.9 9.9 0 0 1-5.04-1.38l-.36-.21-3.72.97.99-3.63-.23-.37a9.88 9.88 0 0 1-1.52-5.25c0-5.46 4.44-9.9 9.9-9.9a9.82 9.82 0 0 1 7 2.9 9.83 9.83 0 0 1 2.89 7c0 5.45-4.44 9.87-9.9 9.87Zm5.43-7.4c-.3-.15-1.77-.87-2.05-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.95 1.17-.17.2-.35.22-.65.07-.3-.15-1.26-.46-2.4-1.46-.89-.79-1.49-1.77-1.66-2.07-.18-.3-.02-.46.13-.61.13-.14.3-.35.45-.52.15-.18.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.68-1.64-.93-2.24-.24-.59-.48-.51-.67-.52h-.57c-.2 0-.52.07-.8.37-.28.3-1.05 1.02-1.05 2.5 0 1.47 1.08 2.9 1.23 3.1.15.2 2.12 3.23 5.14 4.53.72.31 1.27.5 1.7.63.72.23 1.37.2 1.89.12.58-.09 1.77-.72 2.02-1.42.25-.7.25-1.3.18-1.42-.08-.13-.28-.2-.58-.35Z"/></svg>WhatsApp <span class="text-[11px] font-medium opacity-70">↗</span></a><a href="mailto:mhmdrafa28@gmail.com" class="inline-flex items-center gap-2 rounded-full border border-zinc-700 px-5 py-3 text-sm font-semibold transition hover:border-violet-400/60 hover:bg-white/[.04]"><span class="text-violet-300">✉</span> Email me <span class="text-[11px] text-zinc-500">↗</span></a><a href="https://github.com/rapuy28" target="_blank" rel="noreferrer" class="inline-flex items-center gap-2 rounded-full border border-zinc-700 px-5 py-3 text-sm font-semibold transition hover:border-violet-400/60 hover:bg-white/[.04]"><span class="font-bold">⌘</span> GitHub <span class="text-[11px] text-zinc-500">↗</span></a></div>
+        <p class="mono mt-5 text-[11px] text-zinc-600">OR EMAIL DIRECTLY AT <a class="text-zinc-400 underline decoration-zinc-700 underline-offset-4 hover:text-white" href="mailto:mhmdrafa28@gmail.com">mhmdrafa28@gmail.com</a></p>
+      </div>
+    </section>
+  </main>
+  <footer class="border-t border-zinc-800/50 dark:border-white/5"><div class="mx-auto flex max-w-7xl flex-col items-center justify-between gap-4 px-5 py-7 text-xs text-zinc-500 sm:flex-row sm:px-8"><a href="#home" class="flex items-center gap-2 font-bold text-zinc-300"><span class="gradient-text">rq.</span> Muhammad Rafa Qanthara</a><span>Designed & built with intention <span class="text-violet-300">✳</span></span><span>© <span id="year"></span> · Indonesia</span></div></footer>
+  <script>
+    (() => {
+      const root = document.documentElement;
+      const toggle = document.getElementById('theme-toggle');
+      const sun = document.getElementById('theme-sun');
+      const moon = document.getElementById('theme-moon');
+      const setTheme = (theme) => {
+        root.classList.toggle('dark', theme === 'dark');
+        sun.classList.toggle('hidden', theme === 'light');
+        moon.classList.toggle('hidden', theme === 'dark');
+        document.querySelector('meta[name="theme-color"]').content = theme === 'dark' ? '#09090b' : '#f7f7f8';
+        toggle.setAttribute('aria-label', `Switch to ${theme === 'dark' ? 'light' : 'dark'} mode`);
+      };
+      setTheme(root.classList.contains('dark') ? 'dark' : 'light');
+      toggle.addEventListener('click', () => {
+        const next = root.classList.contains('dark') ? 'light' : 'dark';
+        root.classList.toggle('dark', next === 'dark');
+        localStorage.setItem('rafa-theme', next);
+        setTheme(next);
+      });
+      document.getElementById('year').textContent = new Date().getFullYear();
+
+      const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      const revealItems = document.querySelectorAll('.reveal');
+      if ('IntersectionObserver' in window && !reduceMotion) {
+        const observer = new IntersectionObserver((entries, instance) => {
+          entries.forEach(entry => { if (entry.isIntersecting) { entry.target.classList.add('visible'); instance.unobserve(entry.target); } });
+        }, { threshold: 0.12, rootMargin: '0px 0px -35px 0px' });
+        revealItems.forEach(item => observer.observe(item));
+      } else revealItems.forEach(item => item.classList.add('visible'));
+
+      const layers = [...document.querySelectorAll('.parallax')];
+      let ticking = false;
+      const updateParallax = () => {
+        const y = window.scrollY;
+        layers.forEach(layer => {
+          const speed = Number(layer.dataset.speed || 0);
+          layer.style.transform = `translate3d(0, ${y * speed}px, 0)`;
+        });
+        ticking = false;
+      };
+      if (!reduceMotion) {
+        window.addEventListener('scroll', () => {
+          if (!ticking) { window.requestAnimationFrame(updateParallax); ticking = true; }
+        }, { passive: true });
+        updateParallax();
+      }
+    })();
+  </script>
+</body>
+</html>
+
+
+
+
