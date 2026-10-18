@@ -65,7 +65,7 @@
         <span class="text-sm font-bold tracking-tight">Muhammad Rafa Q</span>
       </a>
       <div class="hidden items-center gap-8 text-xs font-semibold sm:flex">
-        <a class="nav-link" href="#about">About</a><a class="nav-link" href="#education">Pendidikan</a><a class="nav-link" href="#work">Work</a><a class="nav-link" href="#contact">Contact</a>
+        <a class="nav-link" href="#education">Pendidikan</a><a class="nav-link" href="#about">Expertise</a><a class="nav-link" href="#work">Work</a><a class="nav-link" href="#upcoming">Upcoming</a><a class="nav-link" href="#contact">Contact</a>
       </div>
       <div class="flex items-center gap-3">
         <a href="mailto:mhmdrafa28@gmail.com" class="hidden rounded-full border border-zinc-700 px-4 py-2 text-xs font-semibold text-zinc-200 transition hover:border-violet-400/60 hover:text-white dark:border-zinc-700 sm:inline-flex">Let’s talk <span class="ml-2 text-violet-300">↗</span></a>
@@ -168,10 +168,41 @@
         <p class="reveal mt-5 text-xs text-zinc-600">Project concepts shown as portfolio samples. Visit GitHub for current repositories.</p>
       </div>
     </section>
+    <section id="upcoming" class="relative border-y border-zinc-800/50 bg-zinc-900/20 py-24 sm:py-28 dark:border-white/5 dark:bg-white/[.015]">
+      <div class="mx-auto max-w-7xl px-5 sm:px-8">
+        <div class="reveal mb-10 flex flex-col justify-between gap-5 sm:flex-row sm:items-end">
+          <div><p class="mono mb-4 text-[11px] tracking-[.2em] text-violet-300">04 / UPCOMING PROJECTS</p><h2 class="text-4xl font-extrabold tracking-[-.045em] sm:text-5xl">Rencana <span class="gradient-text">proyek.</span></h2></div>
+          <p class="max-w-md text-sm leading-6 text-zinc-400">Rencana proyek untuk periode Januari–Maret 2027.</p>
+        </div>
+        <fieldset class="reveal mb-5 rounded-2xl border border-zinc-800/70 bg-white/[.02] p-5 dark:border-white/10">
+          <legend class="px-2 mono text-[10px] tracking-[.16em] text-zinc-400">FILTER KATEGORI</legend>
+          <div class="flex flex-wrap gap-x-6 gap-y-3">
+            <label class="inline-flex cursor-pointer items-center gap-2.5 text-sm text-zinc-300"><input class="project-filter h-4 w-4 accent-violet-400" type="checkbox" value="Web Development" checked /><span>Web Development</span></label>
+            <label class="inline-flex cursor-pointer items-center gap-2.5 text-sm text-zinc-300"><input class="project-filter h-4 w-4 accent-violet-400" type="checkbox" value="UI/UX Design" checked /><span>UI/UX Design</span></label>
+            <label class="inline-flex cursor-pointer items-center gap-2.5 text-sm text-zinc-300"><input class="project-filter h-4 w-4 accent-violet-400" type="checkbox" value="Data Analysis" checked /><span>Data Analysis</span></label>
+          </div>
+        </fieldset>
+        <div class="reveal overflow-hidden rounded-2xl border border-zinc-800/70 dark:border-white/10">
+          <div class="overflow-x-auto">
+            <table class="w-full min-w-[640px] border-collapse text-left">
+              <thead class="bg-white/[.04]">
+                <tr class="mono text-[10px] tracking-[.12em] text-zinc-400"><th scope="col" class="px-5 py-4 font-normal">PROYEK</th><th scope="col" class="px-5 py-4 font-normal">KATEGORI</th><th scope="col" class="px-5 py-4 font-normal">TARGET</th><th scope="col" class="px-5 py-4 font-normal">STATUS</th></tr>
+              </thead>
+              <tbody id="upcoming-projects" class="divide-y divide-zinc-800/70 dark:divide-white/10">
+                <tr class="project-row transition-colors hover:bg-white/[.025]" data-category="Web Development"><th scope="row" class="px-5 py-5 text-sm font-semibold">Personal Website</th><td class="px-5 py-5 text-sm text-zinc-400">Web Development</td><td class="px-5 py-5 text-sm text-zinc-300">Januari 2027</td><td class="px-5 py-5"><span class="rounded-full border border-violet-400/20 bg-violet-400/[.08] px-3 py-1 text-xs text-violet-300">Direncanakan</span></td></tr>
+                <tr class="project-row transition-colors hover:bg-white/[.025]" data-category="UI/UX Design"><th scope="row" class="px-5 py-5 text-sm font-semibold">Mobile App Concept</th><td class="px-5 py-5 text-sm text-zinc-400">UI/UX Design</td><td class="px-5 py-5 text-sm text-zinc-300">Februari 2027</td><td class="px-5 py-5"><span class="rounded-full border border-violet-400/20 bg-violet-400/[.08] px-3 py-1 text-xs text-violet-300">Direncanakan</span></td></tr>
+                <tr class="project-row transition-colors hover:bg-white/[.025]" data-category="Data Analysis"><th scope="row" class="px-5 py-5 text-sm font-semibold">Analytics Dashboard</th><td class="px-5 py-5 text-sm text-zinc-400">Data Analysis</td><td class="px-5 py-5 text-sm text-zinc-300">Maret 2027</td><td class="px-5 py-5"><span class="rounded-full border border-violet-400/20 bg-violet-400/[.08] px-3 py-1 text-xs text-violet-300">Direncanakan</span></td></tr>
+              </tbody>
+            </table>
+          </div>
+          <p id="project-empty" class="hidden px-5 py-8 text-center text-sm text-zinc-500">Pilih minimal satu kategori untuk menampilkan proyek.</p>
+        </div>
+      </div>
+    </section>
     <section id="contact" class="relative overflow-hidden py-28 sm:py-32">
       <div class="orb parallax absolute -right-24 top-8 h-72 w-72 bg-violet-600/15" data-speed="-.1"></div><div class="orb parallax absolute -left-20 bottom-0 h-60 w-60 bg-cyan-500/10" data-speed=".08"></div>
       <div class="reveal relative mx-auto max-w-5xl px-5 text-center sm:px-8">
-        <p class="mono mb-5 text-[11px] tracking-[.2em] text-violet-300">04 / LET’S CONNECT</p><h2 class="text-4xl font-extrabold leading-tight tracking-[-.05em] sm:text-6xl">Have a good idea?<br/><span class="gradient-text">Let’s make it happen.</span></h2><p class="mx-auto mt-6 max-w-xl text-sm leading-7 text-zinc-400 sm:text-base">Open to exciting projects, thoughtful collaborations, and conversations about building better digital experiences.</p>
+        <p class="mono mb-5 text-[11px] tracking-[.2em] text-violet-300">05 / LET’S CONNECT</p><h2 class="text-4xl font-extrabold leading-tight tracking-[-.05em] sm:text-6xl">Have a good idea?<br/><span class="gradient-text">Let’s make it happen.</span></h2><p class="mx-auto mt-6 max-w-xl text-sm leading-7 text-zinc-400 sm:text-base">Open to exciting projects, thoughtful collaborations, and conversations about building better digital experiences.</p>
         <div class="mt-9 flex flex-wrap justify-center gap-3"><a href="https://wa.me/6282299738853" target="_blank" rel="noreferrer" class="inline-flex items-center gap-2 rounded-full bg-emerald-400 px-5 py-3 text-sm font-bold text-emerald-950 transition hover:bg-emerald-300"><svg class="h-4 w-4" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.52 3.48A11.85 11.85 0 0 0 12.09 0C5.5 0 .14 5.35.13 11.93c0 2.1.55 4.15 1.6 5.96L.04 24l6.27-1.64a11.9 11.9 0 0 0 5.77 1.47h.01c6.58 0 11.94-5.35 11.95-11.93a11.86 11.86 0 0 0-3.52-8.42ZM12.09 21.8h-.01a9.9 9.9 0 0 1-5.04-1.38l-.36-.21-3.72.97.99-3.63-.23-.37a9.88 9.88 0 0 1-1.52-5.25c0-5.46 4.44-9.9 9.9-9.9a9.82 9.82 0 0 1 7 2.9 9.83 9.83 0 0 1 2.89 7c0 5.45-4.44 9.87-9.9 9.87Zm5.43-7.4c-.3-.15-1.77-.87-2.05-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.95 1.17-.17.2-.35.22-.65.07-.3-.15-1.26-.46-2.4-1.46-.89-.79-1.49-1.77-1.66-2.07-.18-.3-.02-.46.13-.61.13-.14.3-.35.45-.52.15-.18.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.68-1.64-.93-2.24-.24-.59-.48-.51-.67-.52h-.57c-.2 0-.52.07-.8.37-.28.3-1.05 1.02-1.05 2.5 0 1.47 1.08 2.9 1.23 3.1.15.2 2.12 3.23 5.14 4.53.72.31 1.27.5 1.7.63.72.23 1.37.2 1.89.12.58-.09 1.77-.72 2.02-1.42.25-.7.25-1.3.18-1.42-.08-.13-.28-.2-.58-.35Z"/></svg>WhatsApp <span class="text-[11px] font-medium opacity-70">↗</span></a><a href="mailto:mhmdrafa28@gmail.com" class="inline-flex items-center gap-2 rounded-full border border-zinc-700 px-5 py-3 text-sm font-semibold transition hover:border-violet-400/60 hover:bg-white/[.04]"><span class="text-violet-300">✉</span> Email me <span class="text-[11px] text-zinc-500">↗</span></a><a href="https://github.com/rapuy28" target="_blank" rel="noreferrer" class="inline-flex items-center gap-2 rounded-full border border-zinc-700 px-5 py-3 text-sm font-semibold transition hover:border-violet-400/60 hover:bg-white/[.04]"><span class="font-bold">⌘</span> GitHub <span class="text-[11px] text-zinc-500">↗</span></a></div>
         <p class="mono mt-5 text-[11px] text-zinc-600">OR EMAIL DIRECTLY AT <a class="text-zinc-400 underline decoration-zinc-700 underline-offset-4 hover:text-white" href="mailto:mhmdrafa28@gmail.com">mhmdrafa28@gmail.com</a></p>
       </div>
@@ -199,6 +230,22 @@
         setTheme(next);
       });
       document.getElementById('year').textContent = new Date().getFullYear();
+
+      const projectFilters = [...document.querySelectorAll('.project-filter')];
+      const projectRows = [...document.querySelectorAll('.project-row')];
+      const emptyProjects = document.getElementById('project-empty');
+      const filterProjects = () => {
+        const selectedCategories = new Set(projectFilters.filter(filter => filter.checked).map(filter => filter.value));
+        let visibleCount = 0;
+        projectRows.forEach(row => {
+          const visible = selectedCategories.has(row.dataset.category);
+          row.hidden = !visible;
+          if (visible) visibleCount += 1;
+        });
+        emptyProjects.classList.toggle('hidden', visibleCount > 0);
+      };
+      projectFilters.forEach(filter => filter.addEventListener('change', filterProjects));
+      filterProjects();
 
       const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
       const revealItems = document.querySelectorAll('.reveal');
